@@ -18,13 +18,6 @@ RUN python3 /tmp/get-pip.py \
     && rm /tmp/get-pip.py
 
 #
-# python web stuff
-#
-
-RUN yum install -y python3-memcached memcached python3-mod_wsgi \
-    && yum -y clean all
-
-#
 # basic django stuff
 #
 
