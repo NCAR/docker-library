@@ -33,9 +33,10 @@ RUN python3 -m pip install --upgrade pytz
 
 RUN rpm -ivh http://download.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
 
-# RUN yum install -y npm
-# RUN npm install -g bower
-# FIXME: install git, required by bower
+RUN yum install -y npm git \
+    && yum -y clean all
+
+RUN npm install -g bower
 
 #
 # datavis stuff
