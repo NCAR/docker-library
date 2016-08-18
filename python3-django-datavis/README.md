@@ -6,6 +6,9 @@ Based on official [**CentOS**](https://hub.docker.com/_/centos/) **Docker** imag
 
 ## Tags
 
+- `0.0.1`
+  - remove `memcached` and `mod_wsgi` dependencies, for smaller image, `614.5 MB`
+
 - `0.0.0`
 
   - initial, working functionality
