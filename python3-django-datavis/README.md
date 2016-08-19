@@ -1,6 +1,6 @@
 # ncareol/python3-django-datavis
 
-**Docker** image for [datavis](https://github.com/ncareol/eol-django-datavis) / [django-ncharts](https://github.com/ncareol/django-ncharts/)
+**Docker** image for [ncharts](https://github.com/ncareol/ncharts/)
 
 Based on official [**CentOS**](https://hub.docker.com/_/centos/) **Docker** image.
 
