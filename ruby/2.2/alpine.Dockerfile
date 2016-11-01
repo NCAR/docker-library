@@ -46,6 +46,7 @@ RUN set -ex \
     yaml-dev \
     zlib-dev \
   && apk add --update gcc g++ make linux-headers nodejs tzdata mariadb-dev\
+  # && apk add --update gcc g++ make linux-headers libuv tzdata mariadb-dev\
   && curl -fSL -o ruby.tar.gz "http://cache.ruby-lang.org/pub/ruby/$RUBY_MAJOR/ruby-$RUBY_VERSION.tar.gz" \
   && echo "$RUBY_DOWNLOAD_SHA256 *ruby.tar.gz" | sha256sum -c - \
   && mkdir -p /usr/src \
