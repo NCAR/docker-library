@@ -25,6 +25,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     libffi-dev \
     libglib2.0-dev \
     libmysqlclient-dev \
+    mysql-client \
     libncurses-dev \
     libreadline-dev \
     libssl-dev \
