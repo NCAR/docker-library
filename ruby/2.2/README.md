@@ -4,6 +4,8 @@ Adapted from [**Official Docker Ruby** images](https://hub.docker.com/_/ruby/), 
 
 ## Tags
 
+- [`debian-for-rails-mariadb-2.2.5-0`](https://github.com/ncareol/docker-library/releases/tag/ncareol%2Fruby-debian-for-rails-mariadb-2.2.5-0) switch from mysql to mariadb
+
 - [`debian-for-rails-mysql-2.2.5`](https://github.com/ncareol/docker-library/releases/tag/ncareol%2Fruby-debian-for-rails-mysql-2.2.5) Debian-Jessie-based image w/ Ruby 2.2.5 and dependencies for mysql2 gem and other **CatalogMaps** gems
 
 - [`alpine-for-rails-mariadb-2.2.5`](https://github.com/ncareol/docker-library/releases/tag/ncareol%2Fruby-alpine-for-rails-mariadb-2.2.5) Alpine-based image w/ Ruby 2.2.5 and dependencies for mysql2 gem and other **CatalogMaps** gems
