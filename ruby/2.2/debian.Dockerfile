@@ -25,7 +25,8 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     libffi-dev \
     libglib2.0-dev \
     libmysqlclient-dev \
-    mysql-client \
+    libmariadb-client-lgpl-dev \
+    mariadb-client \
     libncurses-dev \
     libreadline-dev \
     libssl-dev \
