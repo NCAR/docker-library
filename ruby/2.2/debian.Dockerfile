@@ -46,10 +46,10 @@ RUN mkdir -p /usr/local/etc \
   } >> /usr/local/etc/gemrc
 
 ENV RUBY_MAJOR 2.2
-ENV RUBY_VERSION 2.2.5
-ENV RUBY_DOWNLOAD_SHA256 30c4b31697a4ca4ea0c8db8ad30cf45e6690a0f09687e5d483c933c03ca335e3
+ENV RUBY_VERSION 2.2.6
+ENV RUBY_DOWNLOAD_SHA256 de8e192791cb157d610c48a9a9ff6e7f19d67ce86052feae62b82e3682cc675f
 
-COPY ruby-2.2.5.tar.gz /tmp/ruby.tar.gz
+COPY ruby-2.2.6.tar.gz /tmp/ruby.tar.gz
 
 # some of ruby's build scripts are written in ruby
 # we purge this later to make sure our final image uses what we just built
@@ -79,6 +79,19 @@ RUN set -ex \
 
 RUN gem install bundler \
   && rm -rf /usr/local/lib/ruby/gems/2.2.0/cache
+
+#
+# Configure /etc/hosts for sendmail
+#
+# http://www.tothenew.com/blog/setting-up-sendmail-inside-your-docker-container/
+#
+# RUN line=$(head -n 1 /etc/hosts) && line2=$(echo $line | awk '{print $2}') && echo "$line $line2.localdomain" >> /etc/hosts
+
+RUN echo -e "$(hostname -i)\t$(hostname) $(hostname).localhost" >> /etc/hosts
+
+RUN apt-get update \
+    && apt-get install -y sendmail \
+    && rm -rf /var/log/dpkg.log /var/log/apt/*
 
 RUN mkdir /app
 WORKDIR /app
