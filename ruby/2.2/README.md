@@ -4,6 +4,9 @@ Adapted from [**Official Docker Ruby** images](https://hub.docker.com/_/ruby/), 
 
 ## Tags
 
+- [`debian-for-rails-mariadb-2.2.6-1`](https://github.com/ncareol/docker-library/releases/tag/ncareol%2Fruby-debian-for-rails-mariadb-2.2.6-1)
+  - **Devise** usage by **MissionPlanner**: use `postfix` instead of `sendmail`
+
 - [`debian-for-rails-mariadb-2.2.6-0`](https://github.com/ncareol/docker-library/releases/tag/ncareol%2Fdebian-for-rails-mariadb-2.2.6-0)
   - update **Ruby** to `2.2.6`
   - install `sendmail` for **Devise** usage by **MissionPlanner**
