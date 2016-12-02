@@ -90,7 +90,7 @@ RUN gem install bundler \
 RUN echo -e "$(hostname -i)\t$(hostname) $(hostname).localhost" >> /etc/hosts
 
 RUN apt-get update \
-    && apt-get install -y sendmail \
+    && DEBIAN_FRONTEND=noninteractive apt-get install -y postfix \
     && rm -rf /var/log/dpkg.log /var/log/apt/*
 
 RUN mkdir /app
