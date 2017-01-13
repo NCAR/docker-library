@@ -38,6 +38,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     make \
     patch \
     ruby-dev \
+    git \
   && rm -rf /var/lib/apt/lists/*
 
 RUN mkdir -p /usr/local/etc \
