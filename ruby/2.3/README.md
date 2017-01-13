@@ -4,4 +4,7 @@ Adapted from [**Official Docker Ruby** images](https://hub.docker.com/_/ruby/), 
 
 ## Tags
 
+- [`debian-for-rails-mariadb-2.3.3-1`](https://github.com/ncareol/docker-library/releases/tag/ncareol%2Fruby-debian-for-rails-mariadb-2.3.3-1)
+  - install git for easier access of gems that are based on git repos
+
 - [`debian-for-rails-mariadb-2.3.3-0`](https://github.com/ncareol/docker-library/releases/tag/ncareol%2Fruby-debian-for-rails-mariadb-2.3.3-0)
