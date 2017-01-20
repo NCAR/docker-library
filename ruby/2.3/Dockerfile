@@ -39,6 +39,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     patch \
     ruby-dev \
     git \
+    openssh-client \
   && rm -rf /var/lib/apt/lists/*
 
 RUN mkdir -p /usr/local/etc \
@@ -77,7 +78,9 @@ RUN set -ex \
   # && apt-get purge -y --auto-remove $buildDeps \
   && gem update --system \
   && rm -r /usr/src/ruby \
-  && rm -rf /usr/local/lib/ruby/gems/2.2.0/cache /var/log/dpkg.log /var/log/apt/*
+  && rm -rf /usr/local/lib/ruby/gems/2.2.0/cache /var/log/dpkg.log /var/log/apt/* \
+  && mkdir /root/.ssh \
+  && chmod 700 /root/.ssh
 
 RUN gem install bundler \
   && rm -rf /usr/local/lib/ruby/gems/2.2.0/cache
