@@ -8,7 +8,7 @@ Based on official [**CentOS**](https://hub.docker.com/_/centos/) **Docker** imag
 
 ## Tags
 
-- [`0.0.6`](https://github.com/ncareol/docker-library/releases/tag/catalog-ruby-1.9.3-p545-0.0.6)
+- [`0.0.6`](https://github.com/ncareol/docker-library/releases/tag/ncareol/catalog-ruby-1.9.3-p545-0.0.6)
   - add `/root/.ssh` and install git for easier access of gems that are based on git repos
 
 - `0.0.5`
