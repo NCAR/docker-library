@@ -31,6 +31,9 @@ COPY gemrc /root/.gemrc
 RUN yum install -y mariadb mariadb-devel && \
     yum -y clean all
 
+RUN mkdir ~/.ssh && chmod 700 ~/.ssh && \
+    yum install -y git
+
 # TODO? install chruby to handle bin/?
 
 # install bundler
