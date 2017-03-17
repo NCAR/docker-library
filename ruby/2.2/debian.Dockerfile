@@ -37,6 +37,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     libyaml-dev \
     make \
     patch \
+    ruby-dev \
   && rm -rf /var/lib/apt/lists/*
 
 RUN mkdir -p /usr/local/etc \
@@ -72,7 +73,7 @@ RUN set -ex \
   && ./configure --disable-install-doc \
   && make -j"$(nproc)" \
   && make install \
-  && apt-get purge -y --auto-remove $buildDeps \
+  # && apt-get purge -y --auto-remove $buildDeps \
   && gem update --system \
   && rm -r /usr/src/ruby \
   && rm -rf /usr/local/lib/ruby/gems/2.2.0/cache /var/log/dpkg.log /var/log/apt/*
@@ -97,3 +98,11 @@ RUN mkdir /app
 WORKDIR /app
 
 CMD [ "irb" ]
+
+RUN adduser --disabled-password  --gecos '' ruby
+RUN chown ruby:ruby /app
+
+#
+# lots of RUNs need to happen as root, so don't set USER until latest possible
+#
+USER ruby
