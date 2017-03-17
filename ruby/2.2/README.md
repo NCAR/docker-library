@@ -4,6 +4,10 @@ Adapted from [**Official Docker Ruby** images](https://hub.docker.com/_/ruby/), 
 
 ## Tags
 
+- [`debian-for-rails-mariadb-2.2.6-2`](https://github.com/ncareol/docker-library/releases/tag/ncareol%2Fruby-debian-for-rails-mariadb-2.2.6-2)
+  - add and set `ruby` USER
+  - add `ruby-dev` and refrain from removing `buildDeps`, for building native gems
+
 - [`debian-for-rails-mariadb-2.2.6-1`](https://github.com/ncareol/docker-library/releases/tag/ncareol%2Fruby-debian-for-rails-mariadb-2.2.6-1)
   - **Devise** usage by **MissionPlanner**: use `postfix` instead of `sendmail`
 
