@@ -21,7 +21,7 @@ RUN yum install -y $BUILD_PACKAGES_KEEP $BUILD_PACKAGES_TMP && \
     echo 'installing ruby' && \
     ruby-install --system -u file:///tmp/ruby-$RUBY_VERSION.tar.bz2 ruby $RUBY_VERSION && \
     echo 'cleaning up' && \
-    rm -rf ruby-$RUBY_VERSION.tar.bz2 /usr/local/src/ruby-$RUBY_VERSION* ruby-install-0.5.0 ruby-install-0.5.0.tar.gz && \
+    rm -rf ruby-$RUBY_VERSION.tar.bz2 /usr/local/src/ruby-$RUBY_VERSION* ruby-install-0.5.0 ruby-install-0.5.0.tar.gz /usr/local/share/ri /usr/local/share/ruby-install && \
     yum -y --setopt=tsflags=noscripts remove $BUILD_PACKAGES_TMP $PACKAGES_RM && \
     yum -y clean all
 
