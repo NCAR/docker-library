@@ -101,3 +101,14 @@ RUN mkdir /app
 WORKDIR /app
 
 CMD [ "irb" ]
+
+RUN adduser --disabled-password  --gecos '' ruby
+RUN chown ruby:ruby /app
+
+#
+# lots of RUNs need to happen as root, so don't set USER until latest possible
+#
+USER ruby
+
+RUN mkdir /home/ruby/.ssh \
+    && chmod 700 /home/ruby/.ssh
