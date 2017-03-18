@@ -27,7 +27,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     libmysqlclient-dev \
     libmariadb-client-lgpl-dev \
     mariadb-client \
-    libpq-dev \
+    # libpq-dev \
     libncurses-dev \
     libreadline-dev \
     libssl-dev \
@@ -76,12 +76,10 @@ RUN set -ex \
   && ./configure --disable-install-doc \
   && make -j"$(nproc)" \
   && make install \
-  # && apt-get purge -y --auto-remove $buildDeps \
+  && apt-get purge -y --auto-remove $buildDeps \
   && gem update --system \
   && rm -r /usr/src/ruby \
-  && rm -rf /usr/local/lib/ruby/gems/2.2.0/cache /var/log/dpkg.log /var/log/apt/* \
-  && mkdir /root/.ssh \
-  && chmod 700 /root/.ssh
+  && rm -rf /usr/local/lib/ruby/gems/2.2.0/cache /var/log/dpkg.log /var/log/apt/* /usr/share/doc /usr/share/man
 
 RUN gem install bundler \
   && rm -rf /usr/local/lib/ruby/gems/2.2.0/cache
@@ -103,3 +101,14 @@ RUN mkdir /app
 WORKDIR /app
 
 CMD [ "irb" ]
+
+RUN adduser --disabled-password  --gecos '' ruby
+RUN chown ruby:ruby /app
+
+#
+# lots of RUNs need to happen as root, so don't set USER until latest possible
+#
+USER ruby
+
+RUN mkdir /home/ruby/.ssh \
+    && chmod 700 /home/ruby/.ssh
