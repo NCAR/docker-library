@@ -19,3 +19,6 @@ Adapted from [**Official Docker Ruby** images](https://hub.docker.com/_/ruby/), 
   - install git for easier access of gems that are based on git repos
 
 - [`debian-for-rails-mariadb-2.3.3-0`](https://github.com/ncareol/docker-library/releases/tag/ncareol%2Fruby-debian-for-rails-mariadb-2.3.3-0)
+
+- [`ncareol/ruby:debian-for-rails-2.3.1-0`](https://github.com/ncareol/docker-library/releases/tag/ncareol/ruby-debian-for-rails-2.3.1-0)
+  - ruby 2.3.1 image without MySQL / MariaDB dependencies
