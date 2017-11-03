@@ -1,7 +1,7 @@
 # based on / adapted from:
 # https://github.com/docker-library/buildpack-deps/blob/a0a59c61102e8b079d568db69368fb89421f75f2/jessie/curl/Dockerfile
 
-FROM debian:jessie
+FROM debian:jessie-slim
 MAINTAINER Erik Johnson <ej@ucar.edu>
 
 # from buildpack-deps:jessie-curl
@@ -50,8 +50,8 @@ RUN mkdir -p /usr/local/etc \
   } >> /usr/local/etc/gemrc
 
 ENV RUBY_MAJOR 2.4
-ENV RUBY_VERSION 2.4.1
-ENV RUBY_DOWNLOAD_SHA256 a330e10d5cb5e53b3a0078326c5731888bb55e32c4abfeb27d9e7f8e5d000250
+ENV RUBY_VERSION 2.4.2
+ENV RUBY_DOWNLOAD_SHA256 93b9e75e00b262bc4def6b26b7ae8717efc252c47154abb7392e54357e6c8c9c
 
 COPY ruby-$RUBY_VERSION.tar.gz /tmp/ruby.tar.gz
 
